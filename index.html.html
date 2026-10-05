@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reyan Shanavas – Student Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F6; --ink:#14233B; --graphite:#56667E; --line:rgba(20,35,59,.12);
+  --mark:#FFD84D; --markink:#14233B; --pen:#C7381F; --card:#F8FAFC;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0F1827;--ink:#E8EEF7;--graphite:#97A6BD;--line:rgba(232,238,247,.12);--card:#16223A;--pen:#FF7B63}
+}
+:root[data-theme="dark"]{--paper:#0F1827;--ink:#E8EEF7;--graphite:#97A6BD;--line:rgba(232,238,247,.12);--card:#16223A;--pen:#FF7B63}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background-color:var(--paper);color:var(--ink);font:18px/1.65 var(--body);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;background-attachment:fixed}
+a{color:inherit;text-decoration-thickness:2px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pen);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-family:var(--display);font-weight:500;font-size:15px}
+header.top nav{display:flex;gap:20px;flex-wrap:wrap}
+header.top a{text-decoration:none}
+header.top a:hover{text-decoration:underline}
+
+.hero{padding:72px 0 64px}
+.hero h1{font:800 clamp(52px,12vw,128px)/.92 var(--display);letter-spacing:-.035em;margin:0 0 28px}
+.hero h1 span{display:block}
+.hero h1 .hl{background:linear-gradient(transparent 58%,var(--mark) 58% 92%,transparent 92%);color:var(--ink);display:inline;padding:0 .06em}
+:root[data-theme="dark"] .hero h1 .hl,:root:not([data-theme="light"]) .hero h1 .hl{color:var(--ink)}
+.hero p.lead{max-width:34em;font-size:clamp(19px,2.4vw,23px);margin:0 0 28px}
+.stamp{display:inline-block;border:2px solid var(--pen);color:var(--pen);font:600 15px/1.3 var(--display);
+  padding:8px 14px;border-radius:4px;transform:rotate(-2deg);background:var(--card)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{font:600 16px var(--display);padding:12px 20px;border-radius:6px;border:2px solid var(--ink);text-decoration:none;display:inline-block}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--mark);color:#14233B;border-color:#14233B}
+
+section{padding:56px 0;border-top:2px solid var(--ink)}
+section>.wrap>h2{font:800 clamp(30px,5vw,44px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 28px}
+.about{display:grid;grid-template-columns:2fr 1fr;gap:40px}
+.about p{margin:0 0 1em;max-width:36em}
+.facts{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--mark);padding:18px 20px;align-self:start;font-size:16px}
+.facts dt{font:600 14px var(--display);color:var(--graphite);margin-top:12px}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:0}
+
+.proj{display:grid;grid-template-columns:90px 1fr;gap:8px 28px;padding:26px 0;border-bottom:1px solid var(--line)}
+.proj:first-of-type{padding-top:0}
+.proj .yr{font:600 15px var(--display);color:var(--graphite);padding-top:6px}
+.proj h3{font:800 24px/1.2 var(--display);margin:0 0 6px;letter-spacing:-.01em}
+.proj p{margin:0 0 10px;max-width:38em}
+.tags{display:flex;gap:8px;flex-wrap:wrap;padding:0;margin:0;list-style:none}
+.tags li{font:500 14px var(--display);border:1px solid var(--graphite);border-radius:99px;padding:2px 12px;color:var(--graphite)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.skills h3{font:800 18px var(--display);margin:0 0 8px}
+.skills ul{margin:0;padding-left:1.1em}
+.skills li{margin-bottom:4px}
+
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--ink)}
+.tl li{position:relative;padding:0 0 26px}
+.tl li::before{content:"";position:absolute;left:-30px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--mark);border:2px solid var(--ink)}
+.tl b{font:800 18px var(--display)}
+.tl small{display:block;font:500 15px var(--display);color:var(--graphite)}
+
+.contact p{max-width:30em}
+.contact .big{font:800 clamp(24px,5vw,40px)/1.15 var(--display);letter-spacing:-.02em;word-break:break-word}
+footer{padding:32px 0 48px;color:var(--graphite);font:500 14px var(--display);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer button{font:inherit;background:none;border:1px solid var(--graphite);color:var(--graphite);border-radius:6px;padding:4px 12px;cursor:pointer}
+
+@media (max-width:720px){
+  .about{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr}
+  .hero{padding-top:40px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .hl{background-size:0 100%;background-repeat:no-repeat;animation:swipe .9s .3s ease-out forwards}
+  @keyframes swipe{to{background-size:100% 100%}}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>Reyan Shanavas</strong>
+    <nav aria-label="Sections"><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <h1><span>Reyan</span><span class="hl">Shanavas</span></h1>
+    <p class="lead">First-year Computer Science student learning to code the way I train: show up every day, add a little more each week, and track the progress.</p>
+    <span class="stamp">Learning to code, one rep at a time</span>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+  </div>
+  </main>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I'm a first-year Computer Science student. I've learned the C programming language and I have a growing list of things I want to build with it.</p>
+      <p>I'm also a bodybuilder, and I competed in the Natty Kerala Competition 2025, a natural bodybuilding show. Training has taught me discipline, patience and how to stick with a plan when progress is slow. I bring the same habits to my coding practice.</p>
+    </div>
+    <dl class="facts">
+      <dt>Studying</dt><dd>Computer Science, Year 1</dd>
+      <dt>Coding level</dt><dd>C programming, growing fast</dd>
+      <dt>Outside class</dt><dd>Natural bodybuilding competitor</dd>
+    </dl>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <article class="proj">
+    <div class="yr">2026</div>
+    <div>
+      <h3>Workout Log Tracker</h3>
+      <p>A simple program to record exercises, sets, reps and weights, and show progress over time. Combines my two main interests.</p>
+      <ul class="tags"><li>C</li><li>Beginner project</li></ul>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="yr">2026</div>
+    <div>
+      <h3>Calorie and Macro Calculator</h3>
+      <p>Takes body weight, goal and activity level and returns daily calorie and protein targets.</p>
+      <ul class="tags"><li>C</li><li>Functions</li></ul>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="yr">2026</div>
+    <div>
+      <h3>This portfolio</h3>
+      <p>My first personal website, built to share what I'm learning and the projects I make.</p>
+      <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+    </div>
+  </article>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Programming</h3><ul><li>C language</li><li>Programming fundamentals</li><li>Problem solving</li></ul></div>
+    <div><h3>From the gym</h3><ul><li>Discipline and consistency</li><li>Setting and tracking goals</li><li>Patience with slow progress</li></ul></div>
+    <div><h3>Learning next</h3><ul><li>Python</li><li>HTML and CSS</li><li>Git and GitHub</li></ul></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education and activities</h2>
+  <ol class="tl">
+    <li><b>Computer Science</b><small>Your University, 2026 to present</small>Building a base in programming, problem solving and computer science fundamentals.</li>
+    <li><b>Natty Kerala Competition 2025</b><small>Natural bodybuilding, 2025</small>Competed in this natural bodybuilding competition. Add your category and placing if you like.</li>
+  </ol>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p>I'm always happy to talk about coding, fitness, or ideas that combine the two. Send me a message.</p>
+  <p class="big"><a href="mailto:reyanshanavas092@gmail.com">reyanshanavas092@gmail.com</a></p>
+  <p><a href="#">GitHub</a> &nbsp; <a href="#">LinkedIn</a> &nbsp; <a href="#">Résumé (PDF)</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>&copy; 2026 Reyan Shanavas</span>
+  <button type="button" id="theme" aria-label="Switch between light and dark theme">Switch theme</button>
+</div></footer>
+
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById("theme");
+  b.addEventListener("click",function(){
+    var dark=r.getAttribute("data-theme")==="dark"||(r.getAttribute("data-theme")!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);
+    r.setAttribute("data-theme",dark?"light":"dark");
+  });
+})();
+</script>
+</body>
+</html>
